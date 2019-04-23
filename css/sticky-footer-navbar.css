@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #E0C209;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body {
+  height: 100%;
+  margin: 5;
+  font-family: 'Oswald', sans-serif, Arial;
+  background: #E7E7F3;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #E0C209;
+  border-radius: 5px;
+} 
+
+/* Fake image */
+.fakeimg {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #393E41;
+  width: 100%;
+  padding: 20px;
+}
+
+/* change the background color */
+.navbar-custom {
+    background-color: #E0C209;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8);
+    padding: 0.8rem 1rem;
+}
+/* change the link color and add padding for height */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+    padding: 1rem 1rem;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+    background-color: #393E41; /* add background-color to active links */
+}
+
+
+
