@@ -51,14 +51,14 @@ include("config.php");
     <div class="card rounded">
        
       <?php echo("<h5> Pet 1 Name: " .$bestpet_name. "</h5>"); ?>
-      <h5>Submitted on: Dec 7, 2017</h5>
+      <h5>Submitted on: Dec 7, 2017 (CHANGE)</h5>
       <?php echo("<h5>Pet 1 id: " .$pet_id."</h5>"); ?>
       <img src='<?php echo($image_src); ?>' style="width:400px;height:400px;">
     </div>
     
     <div class="card rounded">
       <?php echo("<h5> Pet 2 Name: " .$bestpet_name2. "</h5>"); ?>
-      <h5>Submitted on: Sep 2, 2017</h5>
+      <h5>Submitted on: Sep 2, 2017 (CHANGE)</h5>
       <?php echo("<h5>Pet 2 id: " .$pet_id2. "</h5>"); ?>
       <img src='<?php echo($image_src2); ?>' style="width:400px;height:400px;">
     </div>
