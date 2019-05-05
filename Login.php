@@ -1,7 +1,11 @@
 <?php # Script 3.7 - index.php #2
 
 $page_title = 'Welcome to this Site!';
-include('includes/header.html');
+if(isset($_SESSION['token'])) {
+    include('includes/header_in.html');
+}else{
+    include('includes/header.html');
+}
 
 // Call the function:
 
@@ -77,9 +81,9 @@ if($gClient->getAccessToken()){
 }
 ?>
 
-<div class="container">
+<div class=" jumbotron">
     <!-- Display login button / Google profile information -->
     <?php echo $output;
-    echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+    //echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
     ?>
 </div>
