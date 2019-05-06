@@ -10,6 +10,12 @@ if(isset($_SESSION['token'])) {
 // Call the function:
 
 ?>
+    
+<div class="collapse" id="bestest">
+  <?php 
+    include('includes/bestpets.php');
+  ?>  
+</div>
 <?php
 // Include configuration file
 require_once 'config.php';
@@ -81,9 +87,12 @@ if($gClient->getAccessToken()){
 }
 ?>
 
-<div class=" jumbotron">
+<div id=login>
     <!-- Display login button / Google profile information -->
     <?php echo $output;
     //echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
     ?>
 </div>
+<?php
+include('includes/footer.html');
+?>
