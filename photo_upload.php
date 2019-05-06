@@ -1,7 +1,20 @@
 <?php
 session_start();
+ $page_title = 'Create a post!';
+if(isset($_SESSION['token'])) {
+    include('includes/header_in.html');
+}else{
+    include('includes/header.html');
+}
 include("config.php");
+?>
+ <div class="collapse" id="bestest">
+  <?php 
+    include('includes/bestpets.php');
+  ?>  
+</div>
 
+ <?php
 if(isset($_POST['but_upload'])){
  
   $name = $_FILES['file']['name'];
@@ -32,10 +45,14 @@ if(isset($_POST['but_upload'])){
   }
  
 }
+include('includes/footer.html');
 ?>
-
-<form method="post" action="" enctype='multipart/form-data'>
-  <input type ='text' name='pet_name' id='pet_name' value='Pet Name'>
-  <input type='file' name='file' />
-  <input type='submit' value='Save pet' name='but_upload'>
-</form>
+<div class='container'>
+  <form class='form-inline' method="post" action="" enctype='multipart/form-data'>
+    <label class="sr-only" for="inlineFormInputName2">pet_name</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Pet Name" name='pet_name'>
+    <!--<input type ='text' name='pet_name' id='pet_name' value='Pet Name'>-->
+    <input type='file' class="form-control mb-2 mr-sm-2" name='file' />
+    <input type='submit' class="btn btn-primary mb-2" sty value='Save pet' name='but_upload'>
+  </form>
+</div>

@@ -32,6 +32,7 @@ body {
   min-height: 85%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 85vh; /* these two lines are counted as one 🙂  */     
   display: flex;
+  margin-top: 25px;
 }
 
 /* Header/Blog Title */
@@ -71,6 +72,18 @@ body {
 .navbar-custom .nav-item:hover .nav-link {
     color: #ffffff;
     background-color: #393E41; /* add background-color to active links */
+}
+
+.card-deck {
+  margin: 0 auto;
+}
+
+.card-img-top {
+  height: auto;
+  max-height: 60%;
+  width: auto;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {

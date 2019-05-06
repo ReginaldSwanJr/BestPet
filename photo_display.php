@@ -1,6 +1,6 @@
 <?php
  session_start();
- $page_title = 'Welcome to this Site!';
+ $page_title = 'Your Pets!';
  
  if(isset($_SESSION['token'])) {
      include('includes/header_in.html');
@@ -27,21 +27,23 @@
  while($imagerow = mysqli_fetch_array($images)){ $imagerows[] = $imagerow;}
  
 ?>
-<div class='row align-items-center'>
+<div class='row no-gutters' id='mypets'>
 <?php
 foreach ($imagerows as list($image, $pid)) {
     if( $i % 3 == 0 ) {
      echo("<div class='w-100'></div>");
     }
-    echo("<div class='col-md' style='background-color:white';><img class='card-img-top' src=".$image.">");
+    echo("<div class='col-md';><img class='card-img-top' src=".$image.">");
     $sql2 = "select body from comments where pet_id=$pid";
     $comments = mysqli_query($dbc,$sql2);
     while($commentrow = mysqli_fetch_array($comments)){ $commentrows[] = $commentrow;}
+    echo("<div style='background-color:white';>");
+    echo("Comments:<br>");
     foreach ($commentrows as list($comment)){
-     echo("<p style='background-color:white;'>".$comment."</p>");
+     echo("".$comment."<br>");
     }
     $commentrows = [];
-    echo("</div>");
+    echo("</div></div>");
     $i++;
 }
 ?>

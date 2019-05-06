@@ -19,6 +19,7 @@ include("config.php");
 <div class="collapse" id="bestest">
   <?php 
     include('includes/bestpets.php');
+    //echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
   ?>  
 </div>
 
@@ -35,21 +36,25 @@ include("config.php");
     $bestpet_name = $rows['0']['pet_name'];
     $image_src = $rows['0']['image'];
     $created = $rows['0']['created'];
+    $datemd = substr($created, 5, 5);
+    $datey = substr($created, 0, 4);
        
     $pet_id2 = $rows['1']['id'];
     $bestpet_name2 = $rows['1']['pet_name'];
     $image_src2 = $rows['1']['image'];
     $created2 = $rows['1']['created'];
+    $date2md = substr($created2, 5, 5);
+    $date2y = substr($created2, 0, 4);
       ?>
     <div class="container">
         <div class="card-deck">
             <div class="card rounded">
                 <?php echo("<h3>" .$bestpet_name. "</h3>"); ?>
-                <img class="card-img-top" src='<?php echo($image_src); ?>' >
+                <img class="card-img-top" id="pet" src='<?php echo($image_src); ?>' >
                 <div class="card-body">
                 </div>
                 <div class="card-footer">
-                <?php echo("<h6> Submitted on: " .$created. "</h6>"); ?>
+                <?php echo("<h6> Submitted on: " .$datemd."-".$datey. "</h6>"); ?>
                 <form id="form1" action="vote.php" method="POST">
                     <input type="checkbox" name="rightpet" style="display:none">
                     <input type="hidden"  name="pet1_id" value="<?php echo $pet_id ?>" >
@@ -62,11 +67,11 @@ include("config.php");
             </div>
             <div class="card rounded">
                 <?php echo("<h3>" .$bestpet_name2. "</h3>"); ?>
-                <img class="card-img-top" src='<?php echo($image_src2); ?>' >
+                <img class="card-img-top" id="pet" src='<?php echo($image_src2); ?>' >
                 <div class="card-body">
                 </div>    
                 <div class="card-footer">
-                    <?php echo("<h6> Submitted on: " .$created2. "</h6>"); ?>
+                    <?php echo("<h6> Submitted on: " .$date2md."-".$date2y. "</h6>"); ?>
                     <form id="form1" action="vote.php" method="POST">
                         <input type="checkbox" name="rightpet" style="display:none">
                         <input type="hidden"  name="pet1_id" value="<?php echo $pet_id ?>" >

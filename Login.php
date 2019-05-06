@@ -1,16 +1,7 @@
-<?php # Script 3.7 - index.php #2
-
+<?php
 $page_title = 'Welcome to this Site!';
-if(isset($_SESSION['token'])) {
-    include('includes/header_in.html');
-}else{
-    include('includes/header.html');
-}
-
-// Call the function:
-
+include('includes/header.html');
 ?>
-    
 <div class="collapse" id="bestest">
   <?php 
     include('includes/bestpets.php');
@@ -60,7 +51,7 @@ if($gClient->getAccessToken()){
     
     // Render user profile data
     if(!empty($userData)){
-        echo session_id();
+        //echo session_id();
         $output  = '<h2>Google Account Details</h2>';
         $output .= '<div class="ac-data">';
         $output .= '<img src="'.$userData['picture'].'">';
@@ -72,9 +63,8 @@ if($gClient->getAccessToken()){
         $output .= '<p><b>Logged in with:</b> Google</p>';
         //$output .= '<p><a href="'.$userData['link'].'" target="_blank">Click to visit Google+</a></p>';
         $output .= '<p>Logout from <a href="logout.php">Google</a></p>';
-        
-        include('photo_upload.php');
         $output .= '</div>';
+        echo('<script> location.replace("index.php"); </script>');
     }else{
         $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
     }
