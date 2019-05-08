@@ -38,13 +38,13 @@ $comment2_sql = "INSERT INTO comments(pet_id, body) VALUES ('$pet2_id', '$commen
 //run above querys
 $update = mysqli_query($dbc, $sql1);
 $update_score = mysqli_query($dbc, $score1);
-if($c1){
-$push_comment1 = mysqli_query($dbc, $comment1_sql);}else{echo("comment 1 is null" . "<br/>");}
+// if($c1){
+// $push_comment1 = mysqli_query($dbc, $comment1_sql);}else{echo("comment 1 is null" . "<br/>");}
 
 $update2= mysqli_query($dbc, $sql2);
 $update_score2 = mysqli_query($dbc, $score2);
-if($c2){
-$push_comment2 = mysqli_query($dbc, $comment2_sql);}else{echo("comment 2 is null" . "<br/>");}
+// if($c2){
+// $push_comment2 = mysqli_query($dbc, $comment2_sql);}else{echo("comment 2 is null" . "<br/>");}
 
 
 //echo("comment 1: " .$comment1."<br/>");

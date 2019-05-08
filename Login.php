@@ -1,18 +1,14 @@
 <?php
-$page_title = 'Welcome to this Site!';
-include('includes/header.html');
-?>
-<div class="collapse" id="bestest">
-  <?php 
-    include('includes/bestpets.php');
-  ?>  
-</div>
-<?php
+$page_title = 'Login';
 // Include configuration file
 require_once 'config.php';
 
 // Include User library file
 require_once 'User.class.php';
+
+echo("<style> 
+img {width: 35%;}
+    </style>");
 
 if(isset($_GET['code'])){
     $gClient->authenticate($_GET['code']);
@@ -49,25 +45,26 @@ if($gClient->getAccessToken()){
     // Storing user data in the session
     $_SESSION['userData'] = $userData;
     
+    echo('<script> location.replace("index.php"); </script>');
+    
     // Render user profile data
-    if(!empty($userData)){
-        //echo session_id();
-        $output  = '<h2>Google Account Details</h2>';
-        $output .= '<div class="ac-data">';
-        $output .= '<img src="'.$userData['picture'].'">';
-        $output .= '<p><b>Google ID:</b> '.$userData['oauth_uid'].'</p>';
-        $output .= '<p><b>Name:</b> '.$userData['first_name'].' '.$userData['last_name'].'</p>';
-        $output .= '<p><b>Email:</b> '.$userData['email'].'</p>';
-        $output .= '<p><b>Gender:</b> '.$userData['gender'].'</p>';
-        $output .= '<p><b>Locale:</b> '.$userData['locale'].'</p>';
-        $output .= '<p><b>Logged in with:</b> Google</p>';
-        //$output .= '<p><a href="'.$userData['link'].'" target="_blank">Click to visit Google+</a></p>';
-        $output .= '<p>Logout from <a href="logout.php">Google</a></p>';
-        $output .= '</div>';
-        echo('<script> location.replace("index.php"); </script>');
-    }else{
-        $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
-    }
+    // if(!empty($userData)){
+    //     //echo session_id();
+    //     $output  = '<h2>Google Account Details</h2>';
+    //     $output .= '<div class="ac-data">';
+    //     $output .= '<img src="'.$userData['picture'].'">';
+    //     $output .= '<p><b>Google ID:</b> '.$userData['oauth_uid'].'</p>';
+    //     $output .= '<p><b>Name:</b> '.$userData['first_name'].' '.$userData['last_name'].'</p>';
+    //     $output .= '<p><b>Email:</b> '.$userData['email'].'</p>';
+    //     $output .= '<p><b>Gender:</b> '.$userData['gender'].'</p>';
+    //     $output .= '<p><b>Locale:</b> '.$userData['locale'].'</p>';
+    //     $output .= '<p><b>Logged in with:</b> Google</p>';
+    //     //$output .= '<p><a href="'.$userData['link'].'" target="_blank">Click to visit Google+</a></p>';
+    //     $output .= '<p>Logout from <a href="logout.php">Google</a></p>';
+    //     $output .= '</div>';
+    // }else{
+    //     $output = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
+    // }
 }else{
     // Get login url
     $authUrl = $gClient->createAuthUrl();
@@ -77,12 +74,15 @@ if($gClient->getAccessToken()){
 }
 ?>
 
-<div id=login>
+<div class="card" id="login" style="text-align: center; ">
     <!-- Display login button / Google profile information -->
-    <?php echo $output;
+    <?php 
+    echo("<img class='card-img-top' src='images/acc_upper.png' alt='Best Pet Logo'>");
+    echo("<div class='card-body'>");
+    echo("</br>");
+    echo $output;
+    echo("</div>");
     //echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
     ?>
 </div>
-<?php
-include('includes/footer.html');
-?>
+
