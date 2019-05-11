@@ -6,7 +6,7 @@
 // Database configuration
 define('DB_HOST', 'us-cdbr-iron-east-02.cleardb.net');
 define('DB_USERNAME', 'bff21851fe2a89');
-define('DB_PASSWORD', '414a61ea ');
+define('DB_PASSWORD', '414a61ea');
 define('DB_NAME', 'heroku_9d1320fc1dd85f6');
 define('DB_USER_TBL', 'users');
 
