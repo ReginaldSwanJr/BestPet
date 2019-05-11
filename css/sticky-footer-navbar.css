@@ -26,8 +26,8 @@ body {
   font-family: 'Oswald', sans-serif, Arial;
   background: #E7E7F3;
   margin-bottom: 60px;
-  background-image: url("images/full_logo.png");
-  background-position: left bottom; /*Positioning*/
+  background-image: url("/best_pet/images/full_logo.png"); 
+  background-position: left top; /*Positioning*/
   background-repeat: no-repeat; /*Prevent showing multiple background images*/
 }
 
