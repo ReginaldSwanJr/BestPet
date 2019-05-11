@@ -4,7 +4,7 @@
  */
 
 // Database configuration
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'mysql://bff21851fe2a89:414a61ea@us-cdbr-iron-east-02.cleardb.net/heroku_9d1320fc1dd85f6?reconnect=true');
 define('DB_USERNAME', 'chance');
 define('DB_PASSWORD', 'swan1925');
 define('DB_NAME', 'bestpet');
