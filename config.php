@@ -19,7 +19,7 @@ mysqli_set_charset($dbc, 'utf8');
 // Google API configuration
 define('GOOGLE_CLIENT_ID', '830418697261-cije69ldj6c3lls13v0jo6qfr2119r4l.apps.googleusercontent.com');
 define('GOOGLE_CLIENT_SECRET', '0bDuCrj7zD8mSWGs9bteyZZt');
-define('GOOGLE_REDIRECT_URL', 'https://cpsc4125-rswan.c9users.io/best_pet/Login.php');
+define('GOOGLE_REDIRECT_URL', 'https://bestpet.herokuapp.com/Login.php');
 
 // Start session
 if(!session_id()){
