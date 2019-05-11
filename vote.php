@@ -51,5 +51,5 @@ $push_comment2 = mysqli_query($dbc, $comment2_sql);}else{echo("comment 2 is null
 echo("comment 1: " .$comment1."<br/>");
 echo("comment 2: " .$comment2);
 //header("Location: index.php");
-//echo('<script> location.replace("index.php"); </script>');
+echo('<script> location.replace("index.php"); </script>');
 ?>
