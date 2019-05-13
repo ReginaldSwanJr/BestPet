@@ -6,6 +6,7 @@ if(isset($_SESSION['token'])) {
 }else{
     include('includes/header.html');
 }
+
 include("config.php");
 // Call the function:
 

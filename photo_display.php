@@ -16,6 +16,15 @@
 
  <?php
  include("config.php");
+ function deletePet($id) {
+            $sql1 = "DELETE FROM comments where pet_id = '$id' ";
+            $sql2 = "DELETE FROM pets where id = '$id' ";
+            
+            $deltete_comment = mysqli_query($dbc, sql1);
+            $delete_pet = mysqli_query($dbc,$sql2);
+            echo('<script> location.replace("photo_display.php"); </script>');
+         }
+ 
  
  $imagerows = array();
  $commentrows = array();
@@ -33,7 +42,7 @@ foreach ($imagerows as list($image, $pid)) {
     if( $i % 3 == 0 ) {
      echo("<div class='w-100'></div>");
     }
-    echo("<div class='col-md';><img style='width:500px;height:600px' class='card-img-top' src=".$image.">");
+    echo("<div class='col-md';> <img  class='card-img-top img-thumbnail' src=".$image."> ");
     $sql2 = "select body from comments where pet_id=$pid";
     $comments = mysqli_query($dbc,$sql2);
     while($commentrow = mysqli_fetch_array($comments)){ $commentrows[] = $commentrow;}
